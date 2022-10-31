@@ -1,0 +1,66 @@
+/*This Code is Licensed by Will-Myers.com*/
+.has-wm-blog-sidebar{
+  display:grid;
+  grid-template-columns: 1fr var(--wm-blog-sidebar-width, 250px);
+}
+.has-wm-blog-sidebar .blog-item-top-wrapper{
+  grid-column: 1 / span 2;
+}
+.has-wm-blog-sidebar .blog-item-content-wrapper {
+  grid-column: 1;
+}
+.has-wm-blog-sidebar aside{
+  grid-column: 2;
+}
+.has-wm-blog-sidebar .blog-item-comments{
+  grid-column: 1 / span 2;
+}
+@media(min-width:768px){
+  aside.wm-blog-sidebar .content-wrapper{
+    position:sticky;
+    top:var(--header-bottom, 17px);
+    transition: top 150ms ease-out;
+  }
+}
+@media(max-width:767px){
+  .has-wm-blog-sidebar{
+    display:grid;
+    grid-template-columns: 1fr;
+  }
+  .has-wm-blog-sidebar .blog-item-top-wrapper{
+    grid-column: 1 / span 1;
+  }
+  .has-wm-blog-sidebar aside{
+    grid-column: 1;
+  }
+  .has-wm-blog-sidebar .blog-item-comments{
+    grid-column: 1 / span 1;
+  }
+}
+
+
+
+/*Aside Styles*/
+.tweak-fixed-header-style-basic aside.wm-blog-sidebar .content-wrapper{
+  --header-bottom: 17px;
+}
+aside.wm-blog-sidebar .fluid-engine{
+  column-gap:0px !important;
+  --row-height-scaling-factor: 0 !important;
+}
+
+/*Pull all blocks full width*/
+.wm-blog-sidebar .fe-block{
+  grid-column-end: -1;
+}
+
+
+/*Product Block Adjustments*/
+/*Remove margin bottom*/
+.wm-blog-sidebar .product-block .productDetails .product-price{
+  margin-bottom:0;
+}
+.wm-blog-sidebar .product-block .productDetails .product-title{
+  font-size: 1em;
+}
+
